@@ -10,7 +10,7 @@ jobs:
       MY_SECRET   : ${{secrets.commit_secret}}
       USER_NAME   : githubaction
       USER_EMAIL  : githubaction@fake.com
-      PUBLISH_DIR : ./dist
+      PUBLISH_DIR : ./build
     runs-on: ubuntu-latest
     strategy:
       matrix:
