@@ -2,22 +2,91 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Raleway';
+    src: local('Raleway'), url(./assets/fonts/Raleway-Regular.ttf) format('truetype');
+  }
+
 @layer components {
   .App {
-    @apply bg-primary w-full;
+    @apply bg-primary w-full relative;
     height: 10000px;
     background-image: url('./assets/bg_grid.png');
     background-repeat: no-repeat;
     background-size: contain;
+    overflow-x: hidden;
   }
   .logo {
     width: 115px;
   }
   .App-header {
-    @apply flex;
+    @apply flex items-center;
     padding: 32px 64px;
   }
   .menu {
     font-size: 14px;
+    margin-right: 40px;
+  }
+  .menu li {
+    margin-left: 56px;
+  }
+  .button {
+    @apply flex items-center;
+    border-radius: 4px;
+    padding: 12px 24px;
+    border: solid 1px;
+    font-size: 14px;
+  }
+  .button img {
+    margin-left: 8px;
+  }
+  .enroll {
+    background-color: #5B39F4;
+    border-color: white;
+    color: white;
+  }
+  .signin {
+    background-color: #EFDFD2;
+    border-color: #5B39F4;
+    color: #5B39F4;
+    margin-left: 16px;
+  }
+  .web-title {
+    @apply flex;
+    margin-left: 222px;
+    margin-top: 157px;
+  }
+  .web-title-right {
+    @apply relative;
+    width: 150px;
+    padding-left: 10px;
+  }
+  .web-title-en {
+    font-size: 100px;
+    color: #D96EE9;
+    font-family: 'Raleway';
+  }
+  .web-title-ch {
+    font-size: 40px;
+    color: #00162A;
+  }
+  .web-title-4th {
+    @apply absolute;
+    left: 40px;
+    top: 40px;
+  }
+  .web-title-circle {
+    @apply absolute;
+  }
+  .scrolldown-text {
+    font-family: 'Raleway';
+    font-size: 14px;
+    color: #00162A;
+  }
+  .scrolldown-line {
+    height: 48px;
+    margin-top: 24px;
+    width: 1px;
+    background-color: #00162A;
   }
 }
