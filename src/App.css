@@ -9,12 +9,23 @@
 
 @layer components {
   .App {
-    @apply bg-primary w-full relative;
-    height: 10000px;
+    @apply w-full h-full relative;
+  }
+  .fix-wrapper {
+    @apply bg-primary absolute top-0 left-0 w-full;
     background-image: url('./assets/bg_grid.png');
     background-repeat: no-repeat;
     background-size: contain;
+    height: 100vh;
+  }
+  .front {
+    height: 10000px;
+  }
+  .front-wrapper {
+    @apply absolute top-0 left-0 w-full;
+    overflow-y: scroll;
     overflow-x: hidden;
+    height: 100vh;
   }
   .logo {
     width: 115px;
@@ -88,5 +99,57 @@
     margin-top: 24px;
     width: 1px;
     background-color: #00162A;
+  }
+  .mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* background-color: #5B39F4; */
+    width: 100%;
+    height: 100%;
+  }
+  .c {
+    transition: all 0.5s ease-in-out;
+  }
+  .clip {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    -webkit-mask:
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" width="180" height="100" rx="50" /></svg>') 0/100% 100%,
+        linear-gradient(#fff,#fff);
+    -webkit-mask-composite:destination-out;
+            mask:
+        url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" width="180" height="100" rx="50" /></svg>') 0/100% 100%,
+        linear-gradient(#fff,#fff);
+    mask-composite:exclude;
+    background:#5B39F4;
+    background-image: url('./assets/bg_grid.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  #box {
+    margin: auto;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #5B39F4;
+    background: url('') center/cover;
+    /* background-size: cover;
+    background-position: center; */
+  }
+
+  #innerbox {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index:1;
+  }
+  #hole-rect {
+    transform-origin: center center;
   }
 }
